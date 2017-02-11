@@ -14,6 +14,7 @@ gem 'jquery-rails'
 gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
 gem 'active_model_serializers'
+gem 'rb-readline'
 
 group :development, :test do
   gem 'byebug', platform: :mri
