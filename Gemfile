@@ -16,6 +16,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'active_model_serializers'
 gem 'rb-readline'
 gem 'devise'
+gem 'simple_form'
 
 group :development, :test do
   gem 'byebug', platform: :mri
