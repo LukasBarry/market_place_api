@@ -36,9 +36,9 @@ describe Api::V1::UsersController do
     context "when is not created" do
       before(:each) do
         #notice I'm not including the email
-        @invalid_user_attributes = { password: "12345678",
+        invalid_user_attributes = { password: "12345678",
                                      password_confirmation: "12345678" }
-        post :create, { user: @invalid_user_attributes }, format: :json
+        post :create, { user: invalid_user_attributes }, format: :json
       end
 
       # TODO figure out the routing error on this test
@@ -60,8 +60,8 @@ describe Api::V1::UsersController do
 
     context "when is successfully updated" do
       before(:each) do
-        @user = FactoryGirl.create :user
-        patch :update, { id: @user.id,
+        user = FactoryGirl.create :user
+        patch :update, { id: user.id,
                          user: { email: "newmail@example.com" } }, format: :json
       end
 
@@ -75,8 +75,8 @@ describe Api::V1::UsersController do
 
     context "when is not created" do
       before(:each) do
-        @user = FactoryGirl.create :user
-        patch :update, { id: @user.id,
+        user = FactoryGirl.create :user
+        patch :update, { id: user.id,
                          user: { email: "bademail.com" } }, format: :json
       end
 
@@ -97,8 +97,8 @@ describe Api::V1::UsersController do
 
   describe "DELETE #destroy" do
     before(:each) do
-      @user = FactoryGirl.create :user
-      delete :destroy, { id: @user.id }, format: :json
+      user = FactoryGirl.create :user
+      delete :destroy, { id: user.id }, format: :json
     end
 
     it { should respond_with 204 }
