@@ -19,13 +19,13 @@ gem 'devise'
 gem 'simple_form'
 
 group :development, :test do
+  gem "factory_girl_rails"
+  gem 'ffaker'
   gem 'byebug', platform: :mri
 end
 
 group :test do
   gem "rspec-rails", "~> 3.5"
-  gem "factory_girl_rails"
-  gem 'ffaker'
   gem "shoulda-matchers"
 end
 
