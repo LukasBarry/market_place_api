@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 git_source(:github) do |repo_name|
-  repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?("/")
+  repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?('/')
   "https://github.com/#{repo_name}.git"
 end
 
@@ -19,14 +19,15 @@ gem 'devise'
 gem 'simple_form'
 
 group :development, :test do
-  gem "factory_girl_rails"
+  gem 'factory_girl_rails'
   gem 'ffaker'
   gem 'byebug', platform: :mri
 end
 
 group :test do
-  gem "rspec-rails", "~> 3.5"
-  gem "shoulda-matchers"
+  gem 'rspec-rails', '~> 3.5'
+  gem 'shoulda-matchers'
+  gem 'email_spec'
 end
 
 group :development do
