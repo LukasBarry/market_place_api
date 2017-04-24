@@ -51,7 +51,7 @@ describe Api::V1::OrdersController do
 
       product_1 = FactoryGirl.create :product
       product_2 = FactoryGirl.create :product
-      order_params = { total: 50, user_id: current_user.id, product_ids: [product_1.id, product_2.id] }
+      order_params = { product_ids_and_quantities: [[product_1.id, 2],[ product_2.id, 3]] }
       post :create, params: { user_id: current_user.id, order: order_params }
     end
 
