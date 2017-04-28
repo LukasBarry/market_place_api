@@ -57,7 +57,7 @@ describe Api::V1::OrdersController do
 
     it "returns the just user order record" do
       order_response = json_response
-      expect(order_response[:id]).to be_present
+      expect(order_response).to be_present
     end
 
     it { should respond_with 201 }
